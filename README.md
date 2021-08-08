@@ -1,5 +1,5 @@
 
-
+Code and data to reproduce all figures in
 C. R. González, M. L. Bavassi, and R. Laje, “Response to perturbations as a built-in feature in a mathematical model for paced finger tapping”. Phys Rev E 100, 062412 (2019).
 doi: 10.1103/PhysRevE.100.062412
 
@@ -10,22 +10,22 @@ doi: 10.1103/PhysRevE.100.062412
 $ gcc map-fitting.c -lm -I/usr/local/include -L/usr/local/lib -lgaul -lgaul_util -o map-fitting; ./map-fitting
 
 Input files:
-list_expdatafiles.dat
-perturb_exp_minus10.dat
-perturb_exp_minus20.dat
-perturb_exp_minus30.dat
-perturb_exp_minus40.dat
-perturb_exp_minus50.dat
-perturb_exp_plus10.dat
-perturb_exp_plus20.dat
-perturb_exp_plus30.dat
-perturb_exp_plus40.dat
-perturb_exp_plus50.dat
+- list_expdatafiles.dat
+- perturb_exp_minus10.dat
+- perturb_exp_minus20.dat
+- perturb_exp_minus30.dat
+- perturb_exp_minus40.dat
+- perturb_exp_minus50.dat
+- perturb_exp_plus10.dat
+- perturb_exp_plus20.dat
+- perturb_exp_plus30.dat
+- perturb_exp_plus40.dat
+- perturb_exp_plus50.dat
 
 Output files:
-hyperparams.dat
-evols.dat
-fitness.dat
+- hyperparams.dat
+- evols.dat
+- fitness.dat
 
 
 
@@ -37,15 +37,14 @@ fitness.dat
 $ gcc map-get-evolution.c -lm -o map-get-evolution; ./map-get-evolution N
 
 Input file:
-evols.dat
-(evols_GBL.dat are the obtained solutions described in the manuscript)
-fitness.dat
+- evols.dat (evols_GBL.dat are the obtained solutions described in the manuscript)
+- fitness.dat
 
 Output files:
-evols_sort.dat
-params.dat
-map-plot_results.gnp
-map-fitness.gnp
+- evols_sort.dat
+- params.dat
+- map-plot_results.gnp
+- map-fitness.gnp
 
 
 
@@ -57,19 +56,19 @@ map-fitness.gnp
 $ gcc map-simulator.c -lm -o map-simulator; ./map-simulator
 
 Input files:
-params.dat
-list_expdatafiles.dat
+- params.dat
+- list_expdatafiles.dat
 
 Output files:
-perturb_model_withbl.dat
-perturb_model_nobl.dat
+- perturb_model_withbl.dat
+- perturb_model_nobl.dat
 
 
 ### PLOT TIME SERIES AND TRAJECTORIES
 gnuplot> load 'map-plot_results.gnp'
 
 Input file:
-map-plot_results.gnp
+- map-plot_results.gnp
 
 
 
