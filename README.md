@@ -97,9 +97,13 @@ At the GAUL root directory:
 
 #### Edit file "configure"
 Replace this line:  
-  INCLUDES="$INCLUDES -I/usr/include/slang"  # FIXME: Need to detect slang.h location properly.  
+```
+INCLUDES="$INCLUDES -I/usr/include/slang"  # FIXME: Need to detect slang.h location properly.  
+```
 with this line:  
-  INCLUDES="$INCLUDES -I/usr/include/"  # FIXME: Need to detect slang.h location properly.
+```
+INCLUDES="$INCLUDES -I/usr/include/"  # FIXME: Need to detect slang.h location properly.
+```
 
 
 #### Edit file "/tests/test_slang.c"
