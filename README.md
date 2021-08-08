@@ -1,5 +1,5 @@
 
-Code and data to reproduce all figures in
+Code and data to reproduce all figures in  
 C. R. González, M. L. Bavassi, and R. Laje, “Response to perturbations as a built-in feature in a mathematical model for paced finger tapping”. Phys Rev E 100, 062412 (2019).
 doi: 10.1103/PhysRevE.100.062412
 
@@ -33,7 +33,7 @@ Output files:
 
 ## SORTING AND SELECTING FITTING RESULTS
 
-(setting N=1 selects the fittest solution; N=2 is second to fittest and so on)
+(setting N=1 selects the fittest solution; N=2 is second to fittest and so on)  
 $ gcc map-get-evolution.c -lm -o map-get-evolution; ./map-get-evolution N
 
 Input file:
@@ -75,14 +75,14 @@ Input file:
 
 
 ## RELATIONSHIP BETWEEN PARAMETER NAMES
-MANUSCRIPT and MATLAB code	<--->	C CODE
-a		<--->	a
-b		<--->	b
-c		<--->	c
-d		<--->	d
-alpha	<--->	delta1
-beta	<--->	dseta1
-gamma	<--->	eta1
+MANUSCRIPT and MATLAB code	<--->	C CODE  
+a		<--->	a  
+b		<--->	b  
+c		<--->	c  
+d		<--->	d  
+alpha	<--->	delta1  
+beta	<--->	dseta1  
+gamma	<--->	eta1  
 delta	<--->	alpha2
 
 
@@ -96,58 +96,57 @@ Installing gaul-devel-0.1849-0 on an Intel Core i5-7400 with Ubuntu 16.04
 At the GAUL root directory:
 
 #### Edit file "configure"
-Replace this line:
-INCLUDES="$INCLUDES -I/usr/include/slang"  # FIXME: Need to detect slang.h location properly.
-with this line:
-INCLUDES="$INCLUDES -I/usr/include/"  # FIXME: Need to detect slang.h location properly.
+Replace this line:  
+  INCLUDES="$INCLUDES -I/usr/include/slang"  # FIXME: Need to detect slang.h location properly.  
+with this line:  
+  INCLUDES="$INCLUDES -I/usr/include/"  # FIXME: Need to detect slang.h location properly.
 
 
 #### Edit file "/tests/test_slang.c"
-Replace this line:
-dief("Error %d interpreting the S-Lang script \"%s\".",SLang_Error, script_fname);
-with this line:
-dief("Error %d interpreting the S-Lang script \"%s\".",SLang_get_error(), script_fname);
+Replace this line:  
+  dief("Error %d interpreting the S-Lang script \"%s\".",SLang_Error, script_fname);  
+with this line:  
+  dief("Error %d interpreting the S-Lang script \"%s\".",SLang_get_error(), script_fname);
 
-Replace this line:
-SLang_Error = 0;
-with this line:
-SLang_set_error(0);
+Replace this line:  
+  SLang_Error = 0;  
+with this line:  
+  SLang_set_error(0);
 
-Replace this line:
-dief("Error %d interpreting the SLang script from stdin.", SLang_Error);
-with this line:
-dief("Error %d interpreting the SLang script from stdin.", SLang_get_error());
+Replace this line:  
+  dief("Error %d interpreting the SLang script from stdin.", SLang_Error);  
+with this line:  
+  dief("Error %d interpreting the SLang script from stdin.", SLang_get_error());
 
-Replace this line:
-SLang_Error = 0;
-with this line:
-SLang_set_error(0);
+Replace this line:  
+  SLang_Error = 0;  
+with this line:  
+  SLang_set_error(0);
 
 
 #### Edit file "/util/gaul/log_util.h"
-Comment out the following lines:
-/*
-#if defined(__GNUC__)
-#  if defined(WIN32)
-  FUNCPROTO inline enum log_level_type    log_get_level(void);
-#  else
-  FUNCPROTO extern    inline enum log_level_type  log_get_level(void);
-#  endif
-#else
-*/
-
-//#endif
+Comment out the following lines:  
+  /*
+  #if defined(__GNUC__)
+  #  if defined(WIN32)
+    FUNCPROTO inline enum log_level_type    log_get_level(void);
+  #  else
+    FUNCPROTO extern    inline enum log_level_type  log_get_level(void);
+  #  endif
+  #else
+  */
+  //#endif
 
 
 #### Edit file "/etc/environment"
 Add the following line:
-LD_LIBRARY_PATH="/usr/local/lib"
+  LD_LIBRARY_PATH="/usr/local/lib"
 
 
 ### GAUL installation
 
-./configure
-make
-sudo make install
+  ./configure  
+  make  
+  sudo make install
 
 
