@@ -1,0 +1,10 @@
+perturb_exp_minus50.dat   -50	-1.95e+01
+perturb_exp_minus40.dat   -40	-1.42e+01
+perturb_exp_minus30.dat   -30	-5.52e+00
+perturb_exp_minus20.dat   -20	-1.42e-01
+perturb_exp_minus10.dat   -10	-1.94e+00
+perturb_exp_plus10.dat	10	1.95e+00
+perturb_exp_plus20.dat	20	3.76e-01
+perturb_exp_plus30.dat	30	5.37e+00
+perturb_exp_plus40.dat	40	9.74e+00
+perturb_exp_plus50.dat	50	7.53e+00
